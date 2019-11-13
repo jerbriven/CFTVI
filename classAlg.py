@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import cv2
 
 colors = pd.read_csv('data\\pixel.csv')
 
@@ -21,3 +22,12 @@ testErr = knn.score(XTest,yTest)
 print('Accuracy for training set: ')
 print('Training Error: ',trainErr)
 print('Testing Error: ',testErr)
+
+testColor = 'darkRed'
+im = cv2.imread('testingColors\\' + testColor + '.png')
+pixelTest = []
+for y in im[1,1]:
+    pixelTest.append(y)
+print(pixelTest)
+
+print(knn.predict([pixelTest]))

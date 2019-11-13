@@ -10,12 +10,14 @@ import csv
 #print(pic.max())
 #print(pic.min())
 #print(pic[1,1,1])
-colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+colors = ['red', 'orange', 'yellow', 
+    'green', 'blue', 'purple','black',
+    'white', 'brown']
 
 csvData = [['Color', 'B', 'G', 'R']]
 
 for x in colors:
-    imageName = 'oneColor\\' + x + '.png'
+    imageName = 'trainingColors\\' + x + '.png'
     im = cv2.imread(imageName)
     pixelSet = [x]
     for y in im[1,1]:
